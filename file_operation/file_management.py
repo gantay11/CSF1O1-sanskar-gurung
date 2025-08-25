@@ -9,9 +9,9 @@ print(f"'nonexistent.txt' exists: {file_exists('nonexistent.txt')}")
 import os
 
 def rename_file(old_name, new_name):
-    os.rename(old_name, new_name)
+       os.rename(old_name, new_name)
 
-rename_file('sample.txt', 'renamed_sample.txt')
+rename_file('sample.txt','renamed_sample.txt')
 print("File renamed successfully.")
 print(f"'renamed_sample.txt' exists: {file_exists('renamed_sample.txt')}")
 
@@ -37,9 +37,21 @@ def create_directory(directory_name):
 
 create_directory('new_folder')
 
+import os
+
+def list_files(directory):
+    files = os.listdir(directory)
+    for file in files:
+        print(file)
+
+print("Files in the current directory:")
+list_files('.')
+
+import shutil
+
 def copy_file(source, destination):
     shutil.copy2(source, destination)
-    print(f"File copied from {source} to {destination}.")
+    print(f"File copied from {source} to {destination}")
 
 copy_file('renamed_sample.txt', 'new_folder/copied_sample.txt')
 
